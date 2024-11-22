@@ -1,5 +1,5 @@
 def notificationsSend(String currentBuild) {
-    if (${currentBuild} == SUCCESS){
+    if (${currentBuild} == "SUCCESS"){
                 emailext (
                     subject: "SUCCESSFUL:Job ${env.JOB_NAME}",
                     body: """
@@ -14,13 +14,13 @@ def notificationsSend(String currentBuild) {
                     mimeType: 'text/html'
                     ) 
     }
-    else if (currentBuild == FAILURE){
+    else if (currentBuild == "FAILURE"){
             emailext (
                 subject: "FAILED:Job ${env.JOB_NAME}",
                 body: "Job ${env.JOB_NAME} with ${env.BUILD_NUMBER} has finished with failure. This is the job URL: ${env.JOB_URL}",
                 to: "myaremenko7@gmail.com")
     }
-    else if (currentBuild == UNSTABLE){
+    else if (currentBuild == "UNSTABLE"){
             emailext (
                 subject: "UNSTABLE:Job ${env.JOB_NAME}",
                 body: "Job ${env.JOB_NAME} with ${env.BUILD_NUMBER} has finished with unstable. This is the job URL: ${env.JOB_URL}",
