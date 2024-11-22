@@ -9,6 +9,6 @@ def notificationsSend() {
         echo 'Build is unstable'
 
     } else {
-        echo 'Build status is unknown or not available.'
+        echo 'Build status - no status'
     }
 }
