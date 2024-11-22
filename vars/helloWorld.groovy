@@ -1,3 +1,3 @@
-def  call () {
-        sh 'echo "Hello, this is test"'
+def  call (String name) {
+        sh 'echo Hello ${name}, this is Jenkins session10'
 }
